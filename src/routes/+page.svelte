@@ -5,7 +5,12 @@
 
 <div class="container">
   <UserCard/>
-  <TimeCard workType={'work'} hours={36} hoursLastWeek={37}/>
+  <TimeCard workType={'work'} hours={32} hoursLastWeek={36}/>
+  <TimeCard workType={'play'} hours={10} hoursLastWeek={36}/>
+  <TimeCard workType={'study'} hours={4} hoursLastWeek={7}/>
+  <TimeCard workType={'exercise'} hours={4} hoursLastWeek={5}/>
+  <TimeCard workType={'social'} hours={5} hoursLastWeek={10}/>
+  <TimeCard workType={'self-care'} hours={2} hoursLastWeek={2}/>
 </div>
 
 <style lang="scss">

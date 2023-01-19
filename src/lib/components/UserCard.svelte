@@ -32,7 +32,7 @@
       justify-content: center;
       align-items: center;
       height: 133px;
-      background-color: var(--color-dark-purple);
+      background-color: var(--color-blueish-purple);
       border-bottom-right-radius: var(--border-radius);
       border-bottom-left-radius: var(--border-radius);
 
@@ -75,6 +75,12 @@
         justify-content: space-evenly;
         list-style: none;
         padding: 0;
+
+        li:hover {
+          cursor: pointer;
+          color: var(--color-white);
+        }
+
 
         li.selected {
           color: var(--color-white);
