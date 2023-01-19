@@ -23,8 +23,9 @@
   .user-card {
     height: 203px;
     background-color: var(--color-dark-blue);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
+    width: var(--card-w);
 
     header {
       display: flex;
@@ -32,8 +33,8 @@
       align-items: center;
       height: 133px;
       background-color: var(--color-dark-purple);
-      border-bottom-right-radius: 0.5rem;
-      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
 
       .header-content {
         width: 80%;
@@ -44,6 +45,8 @@
 
         .avatar-container {
           img {
+            border: 2px solid var(--color-white);
+            border-radius: 3rem;
             width: 64px;
             height: 64px;
           }
@@ -61,6 +64,7 @@
         }
       }
     }
+
     nav {
       font-size: 18px;
       color: var(--color-purple);
