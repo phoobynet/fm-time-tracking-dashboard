@@ -1,5 +1,5 @@
 <script lang="ts">
-  type WorkType = 'exercise' | 'play' | 'self-care' | 'social' | 'study' | 'work'
+  import type { WorkType } from '$lib/types/WorkType'
 
   export let workType: WorkType
 
@@ -84,7 +84,6 @@
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(2, auto);
         width: 300px;
-
 
         .work-type {
           text-transform: capitalize;
