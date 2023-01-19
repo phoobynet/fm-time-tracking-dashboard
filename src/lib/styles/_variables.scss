@@ -1,0 +1,12 @@
+:root {
+  --ff: 'Rubik', sans-serif;
+
+  --color-very-dark-blue: #0E1323;
+  --color-white: #FFFFFF;
+}
+
+body {
+  font-family: var(--ff);
+  background-color: var(--color-very-dark-blue);
+  color: var(--color-white);
+}
