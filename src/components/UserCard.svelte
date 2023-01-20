@@ -92,7 +92,7 @@
 				grid-template-rows: 7rem auto;
 				align-items: start;
 				justify-content: start;
-				padding: 1.5rem;
+				padding: 2.1rem 2rem;
 
 				.avatar-container {
 					justify-self: start;
@@ -101,20 +101,36 @@
 					img {
 						border: 2px solid var(--color-white);
 						border-radius: 3rem;
-						width: 78px;
-						height: 78px;
+						width: 85px;
+						height: 85px;
 					}
 				}
 
 				.user-description {
+					padding-left: 0.2rem;
+					padding-top: 0.3rem;
 					.caption {
-						padding-bottom: 0.5rem;
+						padding-bottom: 0.2rem;
 					}
 
 					.name {
 						max-width: 6ch;
 						font-size: 40px;
 						line-height: 47px;
+					}
+				}
+			}
+
+			nav {
+				ul {
+					min-height: 8.1rem;
+					grid-template-columns: unset;
+					grid-template-rows: repeat(3, 1fr);
+					justify-content: space-between;
+					padding: 0.4rem 0 0 2.1rem;
+
+					li {
+						place-self: start;
 					}
 				}
 			}

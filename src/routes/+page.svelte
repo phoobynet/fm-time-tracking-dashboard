@@ -58,7 +58,7 @@
 		justify-content: center;
 
 		@media (min-width: 1440px) {
-			place-content: center;
+			padding-top: 10.8rem;
 		}
 
 		.content {
@@ -72,6 +72,7 @@
 				grid-gap: 2rem;
 				grid-template-columns: var(--user-card-w) repeat(3, var(--time-card-w));
 				grid-template-rows: repeat(2, auto);
+				max-height: 518px;
 
 				.user-card {
 					grid-row: span 2;

@@ -6,11 +6,13 @@
 	export let hours: number
 
 	export let hoursLastWeek: number
+
+	$: workTypeFormatted = (workType ?? '').replace('-', ' ')
 </script>
 
 <div class="time-card" data-work-type={workType}>
 	<div class="values">
-		<div class="work-type">{workType}</div>
+		<div class="work-type">{workTypeFormatted}</div>
 		<div class="ellipsis"><img src="/images/icon-ellipsis.svg" alt="" /></div>
 		<div class="hours">{hours}hrs</div>
 		<div class="hours-last-week">Last week - {hoursLastWeek}hrs</div>
@@ -75,6 +77,9 @@
 			border-top-left-radius: var(--border-radius);
 			grid-template-columns: repeat(2, auto);
 			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				'work-type ellipsis'
+				'hours hours-last-week';
 			padding: 1.5rem 1.5rem 1.3rem 1.5rem;
 
 			&:hover {
@@ -84,17 +89,21 @@
 			}
 
 			.work-type {
+				grid-area: work-type;
 				text-transform: capitalize;
 				font-size: 18px;
+				font-weight: var(--fw-medium);
 				align-self: end;
 			}
 
 			.ellipsis {
+				grid-area: ellipsis;
 				align-self: center;
 				justify-self: end;
 			}
 
 			.hours {
+				grid-area: hours;
 				font-size: 32px;
 				font-weight: var(--fw-light);
 				align-self: start;
@@ -103,10 +112,33 @@
 			}
 
 			.hours-last-week {
+				grid-area: hours-last-week;
 				font-size: 15px;
 				color: var(--color-lilac);
 				align-self: center;
 				justify-self: end;
+			}
+
+			@media (min-width: 1440px) {
+				padding: 1.6rem 1.8rem 1.9rem 1.8rem;
+				min-height: 199px;
+				grid-template-columns: repeat(2, auto);
+				grid-template-rows: auto 1fr auto;
+				grid-template-areas:
+					'work-type ellipsis'
+					'hours .'
+					'hours-last-week .';
+
+				.hours {
+					font-size: 56px;
+					line-height: 77px;
+					align-self: end;
+				}
+
+				.hours-last-week {
+					align-self: start;
+					justify-self: start;
+				}
 			}
 		}
 	}
