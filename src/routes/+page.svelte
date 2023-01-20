@@ -12,7 +12,7 @@
 		{
 			workType: 'play',
 			hours: 10,
-			hoursLastWeek: 36
+			hoursLastWeek: 8
 		},
 		{
 			workType: 'study',
@@ -32,7 +32,7 @@
 		{
 			workType: 'self-care',
 			hours: 2,
-			hoursLastWeek: 1
+			hoursLastWeek: 2
 		}
 	]
 </script>

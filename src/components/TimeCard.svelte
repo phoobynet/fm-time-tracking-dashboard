@@ -10,12 +10,10 @@
 
 <div class="time-card" data-work-type={workType}>
 	<div class="values">
-		<div class="content">
-			<div class="work-type">{workType}</div>
-			<div class="ellipsis"><img src="/images/icon-ellipsis.svg" alt="" /></div>
-			<div class="hours">{hours}hrs</div>
-			<div class="hours-last-week">Last week - {hoursLastWeek}hrs</div>
-		</div>
+		<div class="work-type">{workType}</div>
+		<div class="ellipsis"><img src="/images/icon-ellipsis.svg" alt="" /></div>
+		<div class="hours">{hours}hrs</div>
+		<div class="hours-last-week">Last week - {hoursLastWeek}hrs</div>
 	</div>
 </div>
 
@@ -71,46 +69,44 @@
 
 		.values {
 			display: grid;
-			place-content: center;
-			height: 120px;
+			min-height: 120px;
 			background-color: var(--color-dark-blue);
 			border-top-right-radius: var(--border-radius);
 			border-top-left-radius: var(--border-radius);
+			grid-template-columns: repeat(2, auto);
+			grid-template-rows: auto 1fr;
+			padding: 1.5rem 1.5rem 1.3rem 1.5rem;
+
 			&:hover {
 				cursor: pointer;
 				background-color: #33397a;
 				transition: 0.3s all;
 			}
 
-			.content {
-				display: grid;
-				grid-template-columns: repeat(2, auto);
-				grid-template-rows: repeat(2, auto);
-				width: 300px;
+			.work-type {
+				text-transform: capitalize;
+				font-size: 18px;
+				align-self: end;
+			}
 
-				.work-type {
-					text-transform: capitalize;
-					font-size: 18px;
-				}
+			.ellipsis {
+				align-self: center;
+				justify-self: end;
+			}
 
-				.ellipsis {
-					align-self: center;
-					justify-self: end;
-				}
+			.hours {
+				font-size: 32px;
+				font-weight: var(--fw-light);
+				align-self: start;
+				justify-self: start;
+				margin: 0;
+			}
 
-				.hours {
-					font-size: 32px;
-					align-self: end;
-					justify-self: start;
-					margin: 0;
-				}
-
-				.hours-last-week {
-					font-size: 15px;
-					color: var(--color-lilac);
-					align-self: center;
-					justify-self: end;
-				}
+			.hours-last-week {
+				font-size: 15px;
+				color: var(--color-lilac);
+				align-self: center;
+				justify-self: end;
 			}
 		}
 	}
