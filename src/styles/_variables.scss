@@ -18,9 +18,23 @@
   --color-light-yellow: #F1C75B;
 
 
-  --card-w: 327px;
+  // components
+  --user-card-w: 327px;
+  --user-card-h: 203px;
 
-  --border-radius: 0.5rem;
+  --time-card-w: var(--user-card-w);
+  --time-card-h: 160px;
+
+  --border-radius: 0.8rem;
+
+  @media (min-width: 1440px) {
+    // components
+    --user-card-w: 255px;
+    --user-card-h: 518px;
+
+    --time-card-w: 255px;
+    --time-card-h: 244px;
+  }
 }
 
 body {

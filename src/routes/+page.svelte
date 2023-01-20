@@ -1,70 +1,83 @@
 <script lang="ts">
-  import UserCard from '$lib/components/UserCard.svelte'
-  import TimeCard from '$lib/components/TimeCard.svelte'
-  import type { TimeCardData } from '../lib/types/TimeCardData'
+	import UserCard from '@/components/UserCard.svelte'
+	import TimeCard from '@/components/TimeCard.svelte'
+	import type { TimeCardData } from '@/types/TimeCardData'
 
-  const timeCards: TimeCardData[] = [
-    {
-      workType: 'work',
-      hours: 32,
-      hoursLastWeek: 36
-    },
-    {
-      workType: 'play',
-      hours: 10,
-      hoursLastWeek: 36
-    },
-    {
-      workType: 'study',
-      hours: 4,
-      hoursLastWeek: 7
-    },
-    {
-      workType: 'exercise',
-      hours: 4,
-      hoursLastWeek: 5
-    },
-    {
-      workType: 'social',
-      hours: 5,
-      hoursLastWeek: 10
-    },
-    {
-      workType: 'self-care',
-      hours: 2,
-      hoursLastWeek: 1
-    }
-  ]
+	const timeCards: TimeCardData[] = [
+		{
+			workType: 'work',
+			hours: 32,
+			hoursLastWeek: 36
+		},
+		{
+			workType: 'play',
+			hours: 10,
+			hoursLastWeek: 36
+		},
+		{
+			workType: 'study',
+			hours: 4,
+			hoursLastWeek: 7
+		},
+		{
+			workType: 'exercise',
+			hours: 4,
+			hoursLastWeek: 5
+		},
+		{
+			workType: 'social',
+			hours: 5,
+			hoursLastWeek: 10
+		},
+		{
+			workType: 'self-care',
+			hours: 2,
+			hoursLastWeek: 1
+		}
+	]
 </script>
 
 <div class="container">
-  <div class="user-card">
-    <UserCard/>
-  </div>
+	<div class="content">
+		<div class="user-card">
+			<UserCard />
+		</div>
 
-  {#each timeCards as { workType, hours, hoursLastWeek }}
-    <div class="time-card">
-      <TimeCard workType={workType} hours={hours} hoursLastWeek={hoursLastWeek}/>
-    </div>
-  {/each}
+		{#each timeCards as { workType, hours, hoursLastWeek }}
+			<div class="time-card">
+				<TimeCard {workType} {hours} {hoursLastWeek} />
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style lang="scss">
-  .container {
-    width: 100%;
-    padding: 2rem 1rem;
-    display: grid;
-    justify-content: center;
-    grid-gap: 1rem;
+	.container {
+		height: 100vh;
+		display: grid;
+		justify-content: center;
 
-    @media screen and (min-width: 1440px) {
-      grid-template-columns: repeat(4, auto);
-      grid-template-rows: repeat(2, auto);
+		@media (min-width: 1440px) {
+			place-content: center;
+		}
 
-      .user-card {
-        grid-row: 1/2;
-        grid-column: 1;
-      }
-    }
-  }
+		.content {
+			display: grid;
+			grid-gap: 1.5rem;
+			grid-template-rows: 203px repeat(6, 160px);
+			grid-auto-columns: var(--user-card-w);
+			padding: 5rem 1rem;
+
+			@media (min-width: 1440px) {
+				grid-gap: 2rem;
+				grid-template-columns: var(--user-card-w) repeat(3, var(--time-card-w));
+				grid-template-rows: repeat(2, auto);
+
+				.user-card {
+					grid-row: span 2;
+					grid-column: 1;
+				}
+			}
+		}
+	}
 </style>

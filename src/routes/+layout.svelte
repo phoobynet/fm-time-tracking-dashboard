@@ -1,5 +1,5 @@
-<script>
-  import "$lib/styles/styles.scss"
+<script lang="ts">
+	import '@/styles/styles.scss'
 </script>
 
-<slot></slot>
+<slot />
